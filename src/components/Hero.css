@@ -1,0 +1,51 @@
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-warm) 100%);
+  padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+.hero__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__content {
+  max-width: 640px;
+  text-align: center;
+}
+
+.hero__logo {
+  width: clamp(160px, 25vw, 240px);
+  height: auto;
+  margin: 0 auto 2.5rem;
+  border-radius: 8px;
+}
+
+.hero h1 {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+}
+
+.hero__body {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.hero__emphasis {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-gold);
+  margin-bottom: 2.5rem;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,31 @@
+.contact__inner {
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact__inner p {
+  color: var(--color-text-light);
+}
+
+.contact__actions {
+  margin-top: 2rem;
+}
+
+.contact__social {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.contact__social a {
+  font-size: 0.85rem;
+  color: var(--color-warm-gray);
+  transition: color 0.2s;
+}
+
+.contact__social a:hover,
+.contact__social a:focus-visible {
+  color: var(--color-gold);
+}

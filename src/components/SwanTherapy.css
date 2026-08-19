@@ -1,0 +1,38 @@
+.therapy__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.therapy__text p {
+  color: var(--color-text-light);
+}
+
+.therapy__text p:first-child {
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.therapy__image {
+  border-radius: 6px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+
+.therapy__image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .therapy__content {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .therapy__image {
+    aspect-ratio: 16/10;
+  }
+}

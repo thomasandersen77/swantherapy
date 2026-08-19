@@ -1,0 +1,14 @@
+.about {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about__text p {
+  color: var(--color-text-light);
+}
+
+.about__text strong {
+  color: var(--color-gold);
+  font-weight: 500;
+}

@@ -1,0 +1,40 @@
+.principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.principle {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+}
+
+.principle__number {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.principle h3 {
+  font-family: var(--font-serif);
+}
+
+.principle p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .principles {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .principle {
+    padding: 2rem 1rem;
+  }
+}
