@@ -2,8 +2,9 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(250, 248, 245, 0.92);
+  background: rgba(250, 248, 245, 0.95);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -16,10 +17,19 @@
 
 .header__logo {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: clamp(1.2rem, 3.5vw, 1.35rem);
   font-weight: 600;
   color: var(--color-gold);
   letter-spacing: 0.02em;
+  padding: 0.5rem 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__logo:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .header__nav ul {
@@ -29,11 +39,14 @@
 }
 
 .header__nav a {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: 0.03em;
   color: var(--color-text-light);
-  transition: color 0.2s;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.25rem;
 }
 
 .header__nav a:hover,
@@ -56,53 +69,74 @@
 .header__lang {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.8rem;
+  gap: 0.25rem;
+  font-size: 0.85rem;
   letter-spacing: 0.05em;
 }
 
 .header__lang button {
   color: var(--color-warm-gray);
-  font-size: 0.8rem;
-  padding: 0.2rem 0.3rem;
-  transition: color 0.2s;
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding: 0.4rem 0.5rem;
+  min-width: 36px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  transition: color 0.2s ease;
 }
 
 .header__lang button.active {
   color: var(--color-gold);
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.header__lang button:hover {
+  color: var(--color-text);
 }
 
 .header__lang button:focus-visible {
   outline: 2px solid var(--color-gold);
   outline-offset: 2px;
-  border-radius: 2px;
 }
 
 .header__lang-sep {
   color: var(--color-warm-gray);
+  user-select: none;
 }
 
 .header__burger {
   display: none;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
-  width: 28px;
-  height: 28px;
+  align-items: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 8px;
   z-index: 110;
+  background: transparent;
+  border-radius: 4px;
+}
+
+.header__burger:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
 
 .header__burger span {
   display: block;
-  width: 100%;
-  height: 1.5px;
+  width: 24px;
+  height: 2px;
   background: var(--color-text);
-  transition: all 0.3s ease;
+  border-radius: 1px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .header__burger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 5px);
+  transform: translateY(8px) rotate(45deg);
 }
 
 .header__burger.open span:nth-child(2) {
@@ -110,7 +144,11 @@
 }
 
 .header__burger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -5px);
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.header__backdrop {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -118,21 +156,33 @@
     display: flex;
   }
 
+  .header__backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 95;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
   .header__nav {
     position: fixed;
     top: 0;
     right: 0;
-    width: 280px;
+    width: min(300px, 85vw);
     height: 100dvh;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: flex-start;
-    padding: 5rem 2rem 2rem;
-    gap: 2rem;
+    padding: 5rem 2rem 2.5rem;
+    gap: 2.5rem;
     background: var(--color-bg);
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+    box-shadow: -6px 0 24px rgba(0, 0, 0, 0.12);
     transform: translateX(100%);
-    transition: transform 0.35s ease;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    overflow-y: auto;
   }
 
   .header__nav--open {
@@ -141,10 +191,25 @@
 
   .header__nav ul {
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 0.5rem;
   }
 
   .header__nav a {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    padding: 0.75rem 0.5rem;
+    width: 100%;
+  }
+
+  .header__lang {
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    gap: 0.75rem;
+  }
+
+  .header__lang button {
+    font-size: 0.95rem;
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5rem 0.75rem;
   }
 }

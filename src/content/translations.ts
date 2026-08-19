@@ -99,6 +99,12 @@ export const translations = {
         'Ikke som behandling. Ikke som en metode.',
         'Bare som en påminnelse om hvor mye noe så enkelt som natur, dyr og stillhet kan bety.',
       ],
+      meetPippiHeading: 'Møt Pippi',
+      meetPippiParagraphs: [
+        'Pippi er en svane som Svanejenta begynte å følge, mate og ta bilder av da hun fortsatt var en liten, grå svaneunge. Nå begynner Pippi å bli en ung svane, og fjærene hennes blir stadig hvitere.',
+        'Svanejenta har fått en helt spesiell kjærlighet til Pippi. Det mest fantastiske er at Pippi kjenner henne igjen.',
+        'Det er både givende og terapeutisk å oppleve tillit og nærhet fra et så vakkert dyr. For Svanejenta er det aller fineste at Pippi kjenner henne igjen når de møtes.',
+      ],
     },
     en: {
       heading: 'The story behind Svanejenta',
@@ -107,6 +113,12 @@ export const translations = {
         'What started as small moments outdoors eventually got its own name: <strong>Swan Therapy</strong>.',
         'Not as treatment. Not as a method.',
         'Simply as a reminder of how much something as simple as nature, animals and silence can mean.',
+      ],
+      meetPippiHeading: 'Meet Pippi',
+      meetPippiParagraphs: [
+        'Pippi is a swan that Svanejenta began following, feeding and photographing when she was still a small grey cygnet. Pippi is now growing into a young swan, and her feathers are gradually becoming whiter.',
+        'Svanejenta has developed a very special bond with Pippi. The most wonderful part is that Pippi recognizes her.',
+        'Experiencing trust and closeness from such a beautiful animal can feel deeply rewarding and therapeutic. For Svanejenta, the most special part is that Pippi recognizes her whenever they meet.',
       ],
     },
   },

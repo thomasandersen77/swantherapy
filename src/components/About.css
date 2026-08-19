@@ -12,3 +12,23 @@
   color: var(--color-gold);
   font-weight: 500;
 }
+
+.meet_pippi {
+  margin-top: 4.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-sand);
+}
+
+.meet_pippi__text p {
+  color: var(--color-text-light);
+}
+
+.meet_pippi__image {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  margin: 1.25rem auto 0;
+  border-radius: 6px;
+  object-fit: cover;
+}

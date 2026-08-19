@@ -14,6 +14,7 @@ export default function NatureSection() {
   return (
     <section id="nature" className="section">
       <div className="container nature fade-in">
+        <h2>{t.heading}</h2>
         <div className="nature__grid">
           <div className="nature__image">
             <picture>
@@ -22,15 +23,14 @@ export default function NatureSection() {
                 src={`/images/${natureImage}.jpg`}
                 srcSet={natureSrcSet('jpg')}
                 sizes={natureSizes}
-                alt={lang === 'no' ? 'To svaner på elv gjennom eng i solnedgang' : 'Two swans on a meadow river at sunset'}
-                className="img-cover"
+                alt={lang === 'no' ? 'To svaner i elven omgitt av eng og gyllent kveldslys' : 'Two swans on the river surrounded by meadows and gentle sunset light'}
+                className="img-cover nature__img"
                 loading="lazy"
                 decoding="async"
               />
             </picture>
           </div>
           <div className="nature__text">
-            <h2>{t.heading}</h2>
             {t.paragraphs.map((p, i) => (
               <p key={i}>{p}</p>
             ))}

@@ -1,11 +1,12 @@
 .contact__inner {
-  max-width: 560px;
+  max-width: 580px;
   margin: 0 auto;
   text-align: center;
 }
 
 .contact__inner p {
   color: var(--color-text-light);
+  line-height: 1.7;
 }
 
 .contact__actions {
@@ -16,16 +17,29 @@
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 1rem;
 }
 
 .contact__social a {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   color: var(--color-warm-gray);
-  transition: color 0.2s;
+  padding: 0.5rem 0.75rem;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  transition: color 0.2s ease;
 }
 
 .contact__social a:hover,
 .contact__social a:focus-visible {
   color: var(--color-gold);
+}
+
+.contact__social a:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }

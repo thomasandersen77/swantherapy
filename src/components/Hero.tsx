@@ -9,10 +9,11 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="hero__inner container">
-        <div className="hero__content">
+        <div className="hero__content fade-in">
+          <p className="hero__eyebrow">Swan Therapy</p>
           <img
             src="/images/svanejenta-logo.jpg"
-            alt="Svanejenta logo – gullfarget svane"
+            alt={lang === 'no' ? 'Svanejenta logo – illustrasjon av svane i gulltone' : 'Svanejenta logo – golden swan emblem'}
             className="hero__logo"
             width={240}
             height={240}

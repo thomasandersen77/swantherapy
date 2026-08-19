@@ -16,11 +16,6 @@ export default function SwanTherapy() {
       <div className="container therapy fade-in">
         <h2>{t.heading}</h2>
         <div className="therapy__content">
-          <div className="therapy__text">
-            {t.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
           <div className="therapy__image">
             <picture>
               <source type="image/webp" srcSet={therapySrcSet('webp')} sizes={therapySizes} />
@@ -28,12 +23,17 @@ export default function SwanTherapy() {
                 src={`/images/${therapyImage}.jpg`}
                 srcSet={therapySrcSet('jpg')}
                 sizes={therapySizes}
-                alt={lang === 'no' ? 'Svane med buet hals i gull-lys' : 'Swan with curved neck in golden hour light'}
-                className="img-cover"
+                alt={lang === 'no' ? 'Svane ved vannkanten i gyllent morgenlys' : 'Swan by the water in soft golden morning light'}
+                className="img-cover therapy__img"
                 loading="lazy"
                 decoding="async"
               />
             </picture>
+          </div>
+          <div className="therapy__text">
+            {t.paragraphs.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
         </div>
       </div>

@@ -44,6 +44,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    document.documentElement.lang = lang;
     const cleanup = handleFadeIn();
     const timer = setTimeout(handleFadeIn, 100);
     return () => {

@@ -1,12 +1,15 @@
 .principles {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: clamp(1.5rem, 3vw, 3rem);
 }
 
 .principle {
   text-align: center;
   padding: 2.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  border: 1px solid rgba(197, 165, 90, 0.1);
 }
 
 .principle__number {
@@ -15,26 +18,28 @@
   font-size: 2rem;
   font-weight: 500;
   color: var(--color-gold);
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   line-height: 1;
 }
 
 .principle h3 {
   font-family: var(--font-serif);
+  margin-bottom: 0.75rem;
 }
 
 .principle p {
   color: var(--color-text-light);
   font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 @media (max-width: 768px) {
   .principles {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .principle {
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
   }
 }

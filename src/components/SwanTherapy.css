@@ -1,8 +1,12 @@
 .therapy__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: clamp(2.5rem, 5vw, 4rem);
   align-items: center;
+}
+
+.therapy__text {
+  order: 1;
 }
 
 .therapy__text p {
@@ -15,9 +19,10 @@
 }
 
 .therapy__image {
+  order: 2;
   border-radius: 6px;
   overflow: hidden;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4/3;
 }
 
 .therapy__image picture {
@@ -26,13 +31,22 @@
   height: 100%;
 }
 
+.therapy__img {
+  object-position: center 35%;
+}
+
 @media (max-width: 768px) {
   .therapy__content {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
   }
 
   .therapy__image {
+    order: 1;
     aspect-ratio: 16/10;
+  }
+
+  .therapy__text {
+    order: 2;
   }
 }

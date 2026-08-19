@@ -15,14 +15,33 @@ export default function Contact() {
             <p key={i}>{line}</p>
           ))}
           <div className="contact__actions">
-            <button className="btn btn--primary" type="button">
+            <a
+              href="https://www.instagram.com/svanejenta/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn--primary"
+              aria-label={lang === 'no' ? 'Følg Svanejenta på Instagram (åpnes i ny fane)' : 'Follow Svanejenta on Instagram (opens in a new tab)'}
+            >
               {t.cta}
-            </button>
+            </a>
           </div>
-          <nav className="contact__social" aria-label="Social links">
-            {/* Placeholder links – replace hrefs when ready */}
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
+          <nav className="contact__social" aria-label={lang === 'no' ? 'Sosiale medier' : 'Social media'}>
+            <a
+              href="https://www.instagram.com/svanejenta/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={lang === 'no' ? 'Instagram – Svanejenta (åpnes i ny fane)' : 'Instagram – Svanejenta (opens in a new tab)'}
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.facebook.com/marit.gsamuelsen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={lang === 'no' ? 'Facebook – Marit G. Samuelsen (åpnes i ny fane)' : 'Facebook – Marit G. Samuelsen (opens in a new tab)'}
+            >
+              Facebook
+            </a>
           </nav>
         </div>
       </div>
