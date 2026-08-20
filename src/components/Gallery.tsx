@@ -33,6 +33,12 @@ const images = [
     en: 'Two swans on the river surrounded by meadows and gentle sunset light',
     position: 'center center',
   },
+  {
+    name: 'svanejenta',
+    no: 'Svanejenta – portrett',
+    en: 'Svanejenta – portrait',
+    position: 'center center',
+  },
 ];
 
 function srcSet(name: string, ext: 'webp' | 'jpg') {
