@@ -1,7 +1,29 @@
 .about {
-  max-width: 640px;
+  max-width: 760px;
   margin: 0 auto;
   text-align: center;
+}
+
+.about__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about__image {
+  display: block;
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--color-gold);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.about__intro-content {
+  min-width: 0;
 }
 
 .about__text p {
@@ -11,6 +33,21 @@
 .about__text strong {
   color: var(--color-gold);
   font-weight: 500;
+}
+
+@media (min-width: 640px) {
+  .about__intro {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 2.5rem;
+  }
+
+  .about__image {
+    width: 220px;
+    height: 220px;
+    margin-top: 0.25rem;
+  }
 }
 
 .meet_pippi {
@@ -23,12 +60,49 @@
   color: var(--color-text-light);
 }
 
+.meet_pippi__images {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  max-width: 680px;
+  margin: 2rem auto 0;
+}
+
+@media (min-width: 540px) {
+  .meet_pippi__images {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.meet_pippi__picture {
+  display: block;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  aspect-ratio: 3 / 4;
+  background: var(--color-sand);
+}
+
 .meet_pippi__image {
   display: block;
   width: 100%;
-  max-width: 360px;
-  height: auto;
-  margin: 1.25rem auto 0;
-  border-radius: 6px;
+  height: 100%;
+  border-radius: 8px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.meet_pippi__picture:hover .meet_pippi__image {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .meet_pippi__image {
+    transition: none;
+    transform: none;
+  }
+  .meet_pippi__picture:hover .meet_pippi__image {
+    transform: none;
+  }
 }
